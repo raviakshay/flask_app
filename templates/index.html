@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Index Dot Html</title>
+        <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+    </head>
+    <body>
+        <img src="https://cdn4.vectorstock.com/i/1000x1000/80/83/king-letter-j-logo-icon-design-vector-22768083.jpg" width="200px" height="200px">
+        <form action="greet" method="post">
+            {% for message in get_flashed_messages()%}
+                <p>{{message}}</p>
+            {% endfor %}
+            <br>
+            <input type="text" name="name">
+            <br>
+            <input type="submit" value="Submit" id="greet">
+        </form>
+    </body>
+</html>
